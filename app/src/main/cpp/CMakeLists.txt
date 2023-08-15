@@ -8,6 +8,12 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_library(${CMAKE_PROJECT_NAME} SHARED
   ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/Application/App.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/GUI/ImguiComponent.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/GUI/SceneControlMenu.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/Graphics/Shader.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/Graphics/Camera.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/Scene/BasicScene.cpp
   ${CMAKE_CURRENT_SOURCE_DIR}/../../imgui/imgui.cpp
   ${CMAKE_CURRENT_SOURCE_DIR}/../../imgui/imgui_demo.cpp
   ${CMAKE_CURRENT_SOURCE_DIR}/../../imgui/imgui_draw.cpp
@@ -28,8 +34,13 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
 
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
   ${CMAKE_CURRENT_SOURCE_DIR}/../..
+  ${CMAKE_CURRENT_SOURCE_DIR}/Application
+  ${CMAKE_CURRENT_SOURCE_DIR}/GUI
+  ${CMAKE_CURRENT_SOURCE_DIR}/Scene
+  ${CMAKE_CURRENT_SOURCE_DIR}/Graphics
   ${CMAKE_CURRENT_SOURCE_DIR}/../../imgui
   ${CMAKE_CURRENT_SOURCE_DIR}/../../imgui/backends
+  ${CMAKE_CURRENT_SOURCE_DIR}/../../glm
   ${ANDROID_NDK}/sources/android/native_app_glue
 )
 
